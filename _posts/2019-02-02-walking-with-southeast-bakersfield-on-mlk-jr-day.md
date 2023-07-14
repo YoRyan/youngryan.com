@@ -1,0 +1,31 @@
+---
+title: Walking with Southeast Bakersfield on MLK Jr. Day
+author: Ryan Young
+type: post
+date: 2019-02-03T06:11:35+00:00
+permalink: /2019/02/walking-with-southeast-bakersfield-on-mlk-jr-day/
+ampforwp-amp-on-off:
+  - default
+categories:
+  - writing
+
+---
+Last week, I swung by the Wilson Library to attend Bakersfield&#8217;s 2019 Martin Luther King Jr. Day march. To me, it was a march that lacked bite, because the adjectives I would use to describe that event—docile, tame, by-the-book, ordered—are not words I would normally associate with a march for civil rights. Yet how else would I describe a civil rights march that had an _itinerary_? It had been [sent out](https://www.bakersfield.com/news/full-day-of-activities-planned-for-mlk-day/article_955f9eec-19df-11e9-a052-5786bb32392a.html) in the _Bakersfield Californian_ in advance: set off at 6 o&#8217; clock, march to the tune of &#8220;We Shall Overcome,&#8221; and then attend a service at the neighborhood church. As it turned out, we and our police and media escorts followed this kindergarten-field-trip schedule to the letter.
+
+The march began just past 6. The crowd—about people 30 to 40 in size, dressed in coats and down jackets, appropriate for the chilly January night—was small, according to two of the marchers, both of whom had been regular attendants for years. One of them told me that the march was abbreviated, too, because it used to extend &#8220;all around town&#8221;; now, considering the age of the participants—mostly middle-aged, some elderly, several with Vietnam veteran&#8217;s caps—the march had been truncated to a half-mile walk to the community church. We hope more young people like you will join us in the future, both of them said.
+
+Nonetheless, the parade moved surprisingly briskly. About a third of the marchers formed a line in front, standing side-by-side with their arms locked, singing &#8220;We Shall Overcome.&#8221; The rest formed a vaguely organized mass of people, some of them talking among themselves, some of them joining in the singing, some of them holding up their smartphones to recording the proceedings.
+
+As we walked, the cameramen darted nimbly in and out of the crowd, capturing the scene from all sorts of angles—one of them equipped with a large, brilliant rectangular torch as bright as any construction site work light—while the police barricaded the intersecting roads with their squad cars and shut off the lone traffic signal along the marchers&#8217; route. The attention our crowd received was proportionate to its small size, for there was little foot traffic in this ramshackle corner of Southeast Bakersfield—populated as it was with dilapidated strip malls, humble taco trucks, and working-class ranch homes—but some neighbors did observe the goings-on, out of curiosity, from the chain link fences that lined their modest front yards.
+
+But where was the shock value, the _spontaneity_? I kept waiting for someone to take the initiative, to heckle the cops or to shout a defiant headliner into the cameras. Public demonstrations are supposed to be calls to action, not just background roll on the evening news. After all, for every feelgood speech that MLK made, there was also a sit-in, bus boycott, freedom ride, or some other provocation that deliberately pissed a lot of people off.
+
+Okay, I suppose an MLK march has to be inclusive of all ages, not just rebellious 20-somethings like myself. Besides, who am I to assume what Bakersfield&#8217;s Black community wants and needs? Bakersfield is a conservative town, and the issues faced by the coastal metropolises—affirmative action and blatant racism, among other issues [raised by attendees at their MLK marches](https://www.seattlepi.com/seattlenews/article/Thousands-turnout-for-annual-MLK-Jr-Day-March-13549986.php)—seem many worlds away on these sleepy streets.
+
+There was an informal meet and greet before the march began at 6, through which I was treated to an anthropological cross-section of the marchers. I saw friends meeting old friends and exchanging greetings, news, and small talk under the harsh streetlights of the Wilson Library parking lot. I also saw church buses, vans, and carpools bringing more groups of people to the march. As one might expect, most of the marchers were Black, but people of all races were in attendance—some Whites, some Latinos, and a few Asians—which would have pleased one spirited marcher, who made an impromptu speech expressing hope for a multiracial march in the spirit of MLK Jr. himself.
+
+Surrounding us were the policemen who would close the streets and the television crews who would send images of the march to the rest of the city. Already, the cameramen were mingling in the crowd, shooting footage and interviewing some of us. The policemen stood idly by their squad cars, watching, preparing to halt traffic on Wilson Road on a moment&#8217;s notice. Later on, when we got the church, I saw some of them shaking hands with the marchers.
+
+Sitting in one of the pews of the Church of Christ, watching Black leaders from Arvin and Fresno deliver speeches that struck a delicate balance between religious sermon and political lecture—Moses&#8217; delivery of the Israelites out of Egypt as a metaphor for the civil rights struggle was the highlight of the night, as was a firm reminder that social equality had not brought about economic equality—I realized I had learned more about Black culture than I had in all my years of growing up in Bakersfield. The media, to their credit, were watching diligently, too. They had set up a camera inside of the chapel, and one of their anchors also live-streamed a very moving performance by the church&#8217;s choir.
+
+Maybe I&#8217;m the one who has the wrong idea about MLK Jr. Day. The event is as much a focal point for the Black community as it is a rallying cry for social justice. Sure, we didn&#8217;t create headlines, but how important is a few minutes of a fame in our present-day outrage culture, anyway? I like to think that between the marchers, the church, the police, and the media, we all learned a little bit more about each other that evening. Isn&#8217;t that what Mr. King would have wanted?

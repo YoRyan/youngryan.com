@@ -1,0 +1,43 @@
+---
+title: false
+styles: true
+---
+
+$headingColour: #242a2e;
+$linkColour: #0583bf;
+$hoverColour: #006480;
+
+@import "alembic";
+
+.portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 50rem) {
+        & {
+            flex-direction: row;
+            gap: .5rem;
+
+            & > .portfolio-item {
+                flex-basis: 50%;
+            }
+        }
+    }
+
+    & > .portfolio-item {
+        border: .08rem solid $captionColour;
+
+        & > img {
+            width: 100%;
+        }
+
+        & > .portfolio-desc {
+            padding: 0 1rem;
+        }
+
+        li {
+            margin-left: 2rem;
+        }
+    }
+}

