@@ -5,9 +5,9 @@ categories:
   - tech
 ---
 
-> TL;DR Use [go-getmail](https://github.com/mback2k/go-getmail) to sync your indie, IMAP inbox to an IMAP inbox supported by Gmailify like Outlook.com in combination with Gmailify to achieve a (nearly) perfect Gmail setup.
+> TL;DR Use [go-getmail](https://github.com/mback2k/go-getmail) to sync your indie, IMAP inbox to another IMAP inbox supported by Gmailify like Outlook.com in combination with Gmailify to achieve a (nearly) perfect Gmail setup.
 
-For as long as I have been a sentient Internet user, I have called myself a Gmail addict. I remember chatting with online buddies in the embedded Google Talk widget. I remember claiming two extra gigs of storage by enabling 2-factor authentication when it first became available for Google accounts. I remember when the Internet was going all goo-ga for Google Inbox.
+For as long as I can remember being a sentient Internet user, I have called myself a Gmail addict. I remember chatting with online buddies in the embedded Google Talk widget. I remember claiming two extra gigs of storage by enabling 2-factor authentication when it first became available for Google accounts. I remember when the Internet was going all goo-ga for Google Inbox.
 
 I love Gmail because it integrates so well with the rest of the Google ecosystem: your contacts, your calendar events, your Drive attachments. Microsoft and Apple’s offerings are catching up, but they’re still grappling with the Web 2.0 concept of the web browser as a first-rate client, something Google has been mastering since the turn of the century. Add to that synergy the rest of Gmail’s power features—automatic categorization for incoming messages, precision spam detection, a world-class search engine with custom operators, among various other goodies—and I’m honestly not sure if I could ever possibly leave Gmail. I’m hooked, no matter how many privacy scandals Google keeps embroiling itself in.
 
@@ -21,7 +21,7 @@ So I insist on importing all my mail into my Gmail inbox. Seems pretty easy, rig
 
 Call it the holy grail—or whatever faith-agnostic metaphor you prefer—of Gmail integration, but whatever it is, it has always been seemingly unattainable. Until now.
 
-First, I’ll explain what doesn’t work, and then I’ll explain the solution that I arrived at.
+First, I’ll explain what doesn’t work, and then I’ll explain the solution that I finally arrived at.
 
 ## Just use forwarding!
 
@@ -29,11 +29,11 @@ Setting your external inbox to forward everything to your Gmail address is the m
 
 The problem is when your external address receives mail that is spam, or even looks vaguely like spam.
 
-The email protocol is such that it looks like your external email provider—not the true sender of the message—is the entity who “sent” the spam. And when Gmail receives too many spam-y messages (forwarded or not) from a single server, it gets a little antsy about accepting any more, and simply blackholes _any_ further messages (whether they look like spam or not) from that server for several hours. I emphasize that this isn’t just a little delay in the delivery time, not just a one-way trip to your spam folder; just poof, gonzo, into the digital void your messages go—for hours at a time. And neither the forwarding server, nor the original sender of your email, receives _any_ notification that this is what’s happening to your precious messages.
+The email protocol is such that it appears to Gmail your external email provider—not the true sender of the message—is the entity who “sent” the spam. And when Gmail receives too many spam-y messages (forwarded or not) from a single server, it gets a little antsy about accepting any more, and simply blackholes _any_ further messages (whether they look like spam or not) from that server for several hours. I emphasize that this isn’t just a little delay in the delivery timeline, nor just a one-way trip to your spam folder, but poof, gonzo, into the digital void your messages go—for hours at a time. And neither the forwarding server, nor the original sender of your email, receives _any_ notification that this is what’s happening to your precious messages.
 
-Now, _you_ might think _your_ email address is squeaky clean and would only receive a negligible amount of spam, but you have to multiply this particular scenario by everyone _else_ using your particular provider to forward their messages to Gmail. You see, _their_ spam also tests Gmail’s tolerance. So, when you rely on email forwarding from an indie provider like Purelymail, it’ll work great most of the time, but every few days, you’ll have several hours of downtime when Gmail will go all Quiet Place on your communications. And your senders won’t know a thing.
+Now, _you_ might think _your_ email address is squeaky clean and would only receive a miniscule amount of spam, but you have to multiply this particular scenario by everyone _else_ using your particular provider to forward their messages to Gmail. You see, _their_ spam also tests Gmail’s tolerance. So, when you rely on email forwarding from an indie provider like Purelymail, it’ll work great most of the time, but every few days, you’ll have several hours of downtime when Gmail will go all Quiet Place on your communications. And your senders won’t know a thing.
 
-Not good. On to the next solution.
+Not good. Onto the next solution.
 
 ## What about Gmailify?
 
@@ -41,15 +41,15 @@ Should forwarding not meet your needs, Gmail offers an official product, called 
 
 By contrast, if you want to connect a mailbox that isn’t from one of the big providers, Google allows this, but only through a POP3 import job that needs to be run on a regular basis. You don’t receive your mail until Gmail does its thing. And, there’s the rub: Google schedules these jobs at _their_ convenience, not yours.
 
-(POP3, for some background, is an ancient protocol used to retrieve mail from an email inbox. It’s simple to implement, but it’s a _polling_ protocol, which means you need to initiate a new connection with the email server and start from scratch every time you want to check for new messages. It’s the digital equivalent of having to drive to the post office to see if you have any mail, every single time. Apparently, this is not-insignificant drain on Google’s resources, because they schedule checks of your inbox on intervals as infrequently as up to an hour apart. It’s worse than a city bus.)
+(POP3, for some background, is an ancient protocol used to retrieve mail from an email inbox. It’s simple to implement, but it’s a _polling_ protocol, which means you need to initiate a new connection with the email server and start from scratch every time you want to check for new messages. It’s the digital equivalent of having to drive to the post office to see if you have any mail, every single time. Apparently, this is a not-insignificant drain on Google’s resources, because they schedule checks of your inbox on intervals as infrequently as up to an hour apart. It's worse than waiting for a city bus.)
 
 The exact algorithm used to determine how frequently to poll your inbox, as with so many things Google, is not publicly known, and is subject to much speculation by desperate users trapped in the depths of Google’s support forums. The Internet’s best guess is that it has something to do with how frequently your external inbox has emails to retrieve when Gmail checks it. Cue the people who have taken to [sending](https://rakowski.pro/how-to-force-gmail-to-check-your-pop3-account-as-often-as-possible/) automated emails to themselves to trick Google into thinking their inbox is more popular than it really is. This is, clearly, quite the hack, and I have seen reports that even this trick does not work consistently.
 
-If you use a well-known webmail service like Yahoo or Outlook, the Gmailify experience is excellent—emails arrive within a couple minutes of being received upstream. It is only when using an indie provider that you get downgraded to the “delivered, whenever, maybe even slower than the actual post office” tier.
+If you use a well-known webmail service like Yahoo or Outlook, the Gmailify experience is excellent—emails arrive within just a couple of minutes of being received upstream. It is only when using an indie provider that you get downgraded to the “delivered, whenever, maybe even slower than the actual post office” tier.
 
 I spent years living with Gmail’s sloth of a POP3 importer, mostly being annoyed by the delay in receiving my mail, which could be anywhere from 15 to 60 minutes, depending on Google’s mood. It wasn’t so bad for bank statements and marketing emails, but for 2FA exchanges and conversations with real live humans, the limitations were… painfully apparent.
 
-On Gmail’s desktop interface, at least, I could request a manual POP3 refresh by going through a maze of menus and finding the link. Clicking the refresh button is supposed to do this too, but in true Google fashion, that feature has been broken since forever, with no sign of a fix. (I cannot vouch for any of the paid Chrome extensions.) On the Android app, big surprise, I was screwed: No button to request a POP3 refresh to be found anywhere. By logging into Purelymail’s web interface, I could at least read the messages, even if they hadn’t yet been retrieved by Gmail. But what if I needed to reply to one? Could I really be expected to do that outside of Gmail? The horror!
+On Gmail’s desktop interface, at least, I could request a manual POP3 refresh by navigating through a maze of menus and finding the particular link. Clicking the refresh button is supposed to do this too, but in true Google fashion, that feature has been [broken](https://support.google.com/mail/thread/130772496) since forever, with no sign of a fix. (I cannot vouch for any of the paid Chrome extensions.) On the Android app, big surprise, I was screwed: No button to request a POP3 refresh to be found anywhere. By logging into Purelymail’s web interface, I could at least read the messages, even if they hadn’t yet been retrieved by Gmail. But what if I needed to reply to one? Could I really be expected to do that outside of Gmail? The horror!
 
 ## My first forwarder: Turbogmailify
 
@@ -57,7 +57,7 @@ Not being satisfied with either of the official methods, I wondered if I might b
 
 > Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP.
 
-It would have been a piece of cake to retrieve messages from my Purelymail inbox with POP3, just as Google does, except, obviously, more frequently. But I wasn’t going to settle for that—I wanted _instant_ delivery of new messages. Enter the IMAP protocol, the successor to POP3 in all but name, which includes many more features—among them, the ability to maintain an indefinite connection to an IMAP server and get notified when new messages arrive in a mailbox. (The digital equivalent of having the post office call you when it’s time to go get your mail.)
+It would have been a piece of cake to retrieve messages from my Purelymail inbox with POP3, just as Google does, except, obviously, more frequently. But I wasn’t going to settle for that—I wanted _instant_ delivery of new messages. Enter the IMAP protocol, the successor to POP3 in all but name, which includes many more features—among them, the ability to maintain an indefinite connection to an IMAP server and get notified when new messages arrive in a mailbox. (The digital equivalent of having the post office call you when it’s time to go retrieve your mail.)
 
 So the task was to log in to my IMAP account, wait for notifications of new messages, copy the messages to Gmail, and then delete the messages from the original server. After a few hours hacking together some Go code, I had a working prototype. I call the result “[turbogmailify](https://github.com/YoRyan/turbogmailify/).”
 
@@ -67,7 +67,7 @@ This limitation might be acceptable if all you wanted to do was import an archiv
 
 ## Final answer: go-getmail
 
-The IMAP protocol has another useful feature. Not only can you download email from an IMAP server, you can also upload it—just as you might upload files to Google Drive for storage and eventual retrieval. This capability is how you can sign into multiple accounts with a desktop email client and drag and drop emails between accounts.
+The IMAP protocol has another useful feature: Not only can you download email from an IMAP server, you can also upload it—just as you might upload files to Google Drive for storage and eventual retrieval. This capability is how you can sign into multiple accounts with a desktop email client and drag and drop emails between accounts.
 
 Gmail, like most other webmail providers, has support for IMAP. A thought occurred to me: What if we had a real-time, IMAP to IMAP forwarder? And there just so happens to be a little Go program, [go-getmail](https://github.com/mback2k/go-getmail), that is exactly that. It retrieves mail from one IMAP server and uploads it to another, while also deleting the mail from the original server.
 
@@ -77,7 +77,7 @@ Then I wondered: What if I used, as my IMAP destination, an inbox that Gmail sup
 
 Noting that my Outlook.com inbox has support for both IMAP access and Gmailify, I quickly created a go-getmail configuration file and gave this harebrained scheme a shot: Purelymail to Outlook.com to Gmail.
 
-And it works! And it’s—almost—perfect! Fast delivery, no spam black hole, automatic classification. The holy grail!
+And it works! And it’s—almost—perfect! Fast delivery, no spam black hole, automatic classification. The Gmail holy grail!
 
 With one exception: Gmail perceives imported emails from “sensitive” senders (think banks, and for some reason, the USPS) as suspicious and automatically marks them as spam. No big deal—I’ll simply provide my real Gmail address to senders that Gmail consistently flags. Otherwise, this setup is close enough to perfect that I’m more than happy to live with this quirk.
 
