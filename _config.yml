@@ -57,7 +57,6 @@ plugins:
 
 exclude:
   - Dockerfile
-  - _hugo/ # TODO remove me
 logo: / # We need Alembic to "think" there's a logo for our override to work.
 permalink: /:year/:slug/
 pagination:
