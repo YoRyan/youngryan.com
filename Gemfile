@@ -17,6 +17,7 @@ gem "alembic-jekyll-theme"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-paginate-v2"
+  gem "jekyll_html_truncatewords", "~> 0.1"
   gem "jemoji"
   gem "liquid_reading_time"
 end

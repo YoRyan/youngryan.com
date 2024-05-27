@@ -38,7 +38,8 @@ GEM
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
-    google-protobuf (4.26.1-x86_64-linux)
+    google-protobuf (4.27.0-x86_64-linux)
+      bigdecimal
       rake (>= 13)
     html-pipeline (2.14.3)
       activesupport (>= 2)
@@ -85,6 +86,9 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll_html_truncatewords (0.1.2)
+      liquid
+      nokogiri
     jemoji (0.13.0)
       gemoji (>= 3, < 5)
       html-pipeline (~> 2.2)
@@ -101,7 +105,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    minitest (5.23.0)
+    minitest (5.23.1)
     mutex_m (0.2.0)
     nokogiri (1.16.5-x86_64-linux)
       racc (~> 1.4)
@@ -136,6 +140,7 @@ DEPENDENCIES
   jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)
   jekyll-paginate-v2
+  jekyll_html_truncatewords (~> 0.1)
   jemoji
   liquid_reading_time
   tzinfo (>= 1, < 3)
