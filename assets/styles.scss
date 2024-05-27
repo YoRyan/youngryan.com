@@ -59,3 +59,19 @@ article {
         }
     }
 }
+
+aside {
+    .section--date-index {
+        & > details {
+            list-style: none;
+            font-size: smaller;
+
+            & > summary {
+                display: list-item; // Restore the open/closed indicator.
+            }
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
