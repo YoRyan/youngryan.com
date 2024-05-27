@@ -145,6 +145,7 @@ COPY . .
 RUN go mod download
 ENV CGO_ENABLED=0 GOOS=linux
 RUN go build -a -installsuffix cgo -o ./out/go-getmail .
+
 FROM scratch
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /src/out/go-getmail /main
