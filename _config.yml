@@ -32,6 +32,7 @@ theme: alembic-jekyll-theme
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll_html_truncatewords
   - jemoji
   - liquid_reading_time 
 
